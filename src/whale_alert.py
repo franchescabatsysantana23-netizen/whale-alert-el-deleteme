@@ -57,10 +57,11 @@ def whale_alert_extractor() -> dict[str,list[str]] | None:
         logger.error(f'error {str(e)}')
         return None
 
-        
+
 whale_alert_df =whale_alert_extractor()  
 if whale_alert_df is not None:
     whale_alert_df1=pd.DataFrame(whale_alert_df)
+    whale_alert_df1.to_csv(f'data/whale_alert_{datetime.now().strftime('%Y-%m-%d')}.csv',index=False,encoding='utf-8')
     print(whale_alert_df1.head(10))  
 else:
     print('no se pudo obtener los datos')

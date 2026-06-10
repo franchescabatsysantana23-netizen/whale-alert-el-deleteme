@@ -1,2 +1,4 @@
 .env
 venv
+whale_alert.csv
+logs.log
